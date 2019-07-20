@@ -15,6 +15,19 @@ let vue = new Vue({
   }
 });
 
+let vEvent = new Vue({
+  el: "#app2",
+  data: {
+    counter: 0
+  },
+  methods: {
+    increase: function() {
+      this.counter++;
+      return null;
+    }
+  }
+});
+
 let exercise = new Vue({
   el: "#exercise",
   data: {
