@@ -1,2 +1,0 @@
-# HelloVue
-Created with CodeSandbox
