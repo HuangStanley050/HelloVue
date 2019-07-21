@@ -34,8 +34,13 @@
 	</div>
   <hr/>
 	<div id="app2">
-	<button v-on:click="increase">Increase</button>
+	<button v-on:click="increase(2,$event)">Increase</button>
 	<h1>{{counter}}</h1>
+  <p v-on:mousemove="updateCoordinate">
+  Coordinates {{x}} / {{y}}
+  -----<span v-on:mousemove.stop>Dead Space</span>
+  </p>
+  <input type="text" v-on:Keyup.enter="alertMe"/>
 	</div>
 
 

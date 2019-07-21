@@ -18,12 +18,23 @@ let vue = new Vue({
 let vEvent = new Vue({
   el: "#app2",
   data: {
-    counter: 0
+    counter: 0,
+    x: 0,
+    y: 0
   },
   methods: {
-    increase: function() {
-      this.counter++;
-      return null;
+    increase: function(number, event) {
+      this.counter += number;
+    },
+    updateCoordinate: function(e) {
+      this.x = e.clientX;
+      this.y = e.clientY;
+    },
+    dummy: function(e) {
+      e.stopPropagation();
+    },
+    alertMe: function() {
+      alert("You have entered");
     }
   }
 });
