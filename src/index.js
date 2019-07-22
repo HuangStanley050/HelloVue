@@ -1,19 +1,49 @@
 import "./styles.css";
 
-let vue = new Vue({
-  el: "#app",
+let exercise = new Vue({
+  el: "#exercise",
   data: {
-    name: "Stan",
-    counter: 0,
-    secoundCounter: 0,
+    value: 0,
     result: ""
   },
   computed: {
     output: function() {
-      return this.counter > 5 ? "Greater 5" : "Smaller than 5";
+      return this.value <= 37 ? "Not there yet" : "More than 37";
+    }
+  },
+  watch: {
+    result: function(value) {
+      setTimeout(() => {
+        this.value = 9000;
+      }, 5000);
     }
   }
 });
+
+// let vue = new Vue({
+//   el: "#app",
+//   data: {
+//     name: "Stan",
+//     counter: 0,
+//     secoundCounter: 0,
+//     result: ""
+//   },
+//   computed: {
+//     //meant for sync task
+//     output: function() {
+//       return this.counter > 5 ? "Greater 5" : "Smaller than 5";
+//     }
+//   },
+//   watch:{
+//     //meant for async task
+//     //counter is referring to the data property, have to match
+//     counter: function (value) {
+//       setTimeout(()=>{
+//         this.counter = 0;
+//       },2000)
+//     }
+//   }
+// });
 
 // let exercise2 = new Vue({
 //   el: "#exercise2",
