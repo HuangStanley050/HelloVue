@@ -8,15 +8,11 @@
 
   <body>
     <div id="app">
-      <div
-        :class="divClasses"
-        @click="attachRed = !attachRed"
-        class="demo"
-      ></div>
-      <div class="demo"></div>
-      <div class="demo" :class="color"></div>
-      <hr />
-      <input v-model="color" type="text" />
+      <p v-if="show">you can see me <span>hello world</span></p>
+      <p v-else>you can also see me</p>
+      <template v-if="show"><p>I am from template</p></template>
+      <p>I am always here<p>
+      <button @click="show=!show">hide</button>
     </div>
 
     <!-- <div id="app">
