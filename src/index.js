@@ -1,22 +1,9 @@
 import "./styles.css";
 
-let exercise = new Vue({
-  el: "#exercise",
+let app = new Vue({
+  el: "#app",
   data: {
-    value: 0,
-    result: ""
-  },
-  computed: {
-    output: function() {
-      return this.value <= 37 ? "Not there yet" : "More than 37";
-    }
-  },
-  watch: {
-    result: function(value) {
-      setTimeout(() => {
-        this.value = 9000;
-      }, 5000);
-    }
+    attachRed: false
   }
 });
 
