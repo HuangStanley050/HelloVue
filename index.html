@@ -8,20 +8,14 @@
 
   <body>
     <div id="app">
-      <p v-if="show">you can see me <span>hello world</span></p>
-      <p v-else>you can also see me</p>
-      <template v-if="show"><p>I am from template</p></template>
-      <p>I am always here<p>
-      <button @click="show=!show">hide</button>
+      <ul>
+        <li v-for="(ingredient,i) in ingredients">{{ingredient}} ({{i}})</li>
+      </ul>
+      <template v-for="(ingredient,index) in ingredients">
+        <hi>{{ingredient}}</hi>
+        <p>{{index}}</p>
+      </template>
     </div>
-
-    <!-- <div id="app">
-      <button @:click="counter++">Increase</button>
-      <button @:click="counter--">Decrease</button>
-      <button @:click="secondCounter++">Increase 2nd coutner</button>
-      <p>counter:{{counter}}</p>
-      <p>result:{{output}}</p>
-    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="src/index.js"></script>
